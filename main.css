@@ -6,6 +6,7 @@ body {
 }
 
 p {
+    margin-top: -3em;
     font-family: monospace;
     color: #FF00E6;
     align-content: center;
@@ -19,7 +20,7 @@ a:hover{
     color: #FF00E6;
 }
 a:visited{
-    color:black;
+    color:#FF00E6;
     text-decoration: none;
 }
 
@@ -46,6 +47,10 @@ h1 {
 
 #offset {
   animation: letter-flicker 2s linear infinite;
+}
+
+#aaa {
+  animation: letter-flicker 3s linear infinite;
 }
 
 @keyframes text-flicker {
@@ -184,3 +189,16 @@ box-shadow: 0px 0px 78px 4px rgba(16,134,232,0.73);
     text-shadow: 0px 0px 29px rgba(242, 22, 22, 1);
   }
 }
+
+i {
+  border: solid #FF00E6;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
