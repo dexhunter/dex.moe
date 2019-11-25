@@ -6,6 +6,7 @@ body {
 }
 
 p {
+    font-family: monospace;
     color: #FF00E6;
     align-content: center;
 }
