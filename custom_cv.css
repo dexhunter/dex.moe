@@ -1,0 +1,62 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1em;
+  }
+  
+  .name-container {
+    flex: 1;
+  }
+  
+  .contact-container {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .name {
+    font-size: 2.5em;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .first-name {
+    font-weight: normal;
+  }
+  
+  .last-name {
+    font-weight: bold;
+  }
+  
+  .chinese-name {
+    font-size: 0.6em;
+    margin-left: 0.5em;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .last-update {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 0.5em;
+  }
+
+  .tex4ht-footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 2em;
+    padding: 1em 0;
+  }
+
+  .contact-container p {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .no-margin {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
