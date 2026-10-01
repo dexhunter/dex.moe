@@ -177,6 +177,16 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 @media (max-width:560px){.orgs{grid-template-columns:repeat(2,minmax(0,1fr))}.orgs li:nth-child(odd){border-left:0}.orgs li:nth-child(4){border-left:1px solid var(--line)}}
 @media (max-width:560px){.adopt-grid{grid-template-columns:1fr}}
 
+.emo{font-size:20px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.av{display:inline-block;flex:none;border-radius:6px;background:#fff;object-fit:cover;width:20px;height:20px}
+.stat .emo{font-size:24px}
+.ad .org{display:flex;align-items:center;gap:12px}
+.ad .av.lg{width:36px;height:36px;border-radius:9px;box-shadow:0 0 0 1px var(--line)}
+.ad{transition:transform .25s,box-shadow .25s}
+.ad:hover{transform:translateY(-3px);box-shadow:0 14px 30px -20px rgba(18,23,49,.45)}
+.card .meta{display:flex;align-items:center;gap:8px}
+.card .meta .emo{font-size:17px}
+
 /* Selected work */
 .works{background:var(--ivory)}
 .feat{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -226,6 +236,25 @@ td a:hover{color:var(--link)}
 td .area{font-size:12.5px;color:var(--muted)}
 .tbl-note{margin-top:14px;font-size:13.5px;color:var(--muted)}
 
+.repos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.repo{display:flex;align-items:center;gap:12px;padding:14px;border-radius:14px;background:var(--paper);border:1px solid var(--line);text-decoration:none;color:var(--ink);min-width:0;transition:transform .2s,box-shadow .2s,border-color .2s}
+.repo:hover{transform:translateY(-3px);border-color:var(--ink-2);box-shadow:0 14px 28px -20px rgba(18,23,49,.5)}
+.repo .av{width:36px;height:36px;border-radius:9px}
+.repo span{min-width:0}
+.repo b{display:block;font:600 15px/1.25 var(--sans);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.repo small{display:block;font:400 12px/1.4 var(--mono);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:980px){.repos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.repo{padding:12px;gap:10px}.repo .av{width:30px;height:30px}}
+.col-title.hl-title{margin-top:56px}
+.hl-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin-bottom:6px}
+.hl-head h3{margin:0}
+.stack-av{display:flex;padding-left:8px}
+.stack-av a{margin-left:-8px;border-radius:50%;border:2px solid var(--sand);background:var(--sand);transition:transform .2s;line-height:0}
+.stack-av a:hover{transform:translateY(-3px);z-index:1}
+.stack-av .av{width:30px;height:30px;border-radius:50%}
+.cpath .emo{font-size:22px;margin-bottom:2px}
+.awards li span{font-size:16px}
+
 /* Papers + talks */
 .papers{background:var(--paper)}
 .two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,5vw,72px)}
@@ -238,7 +267,7 @@ td .area{font-size:12.5px;color:var(--muted)}
 .col-title{font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
 .awards{margin-top:40px}
 .awards ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.awards li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:12px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.awards li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:12px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
 .awards li span{font:500 12.5px/1.6 var(--mono);color:var(--muted)}
 @media (max-width:860px){.two{grid-template-columns:1fr}}
 
@@ -342,12 +371,12 @@ td .area{font-size:12.5px;color:var(--muted)}
   <div class="wrap">
     <div class="path-head"><b>Path</b><span>From blockchain infrastructure and trading systems to agents that do ML research</span></div>
     <ol class="cpath">
-      <li><span class="yr">2016-18</span><b>XJTLU</b><span>Deep RL for portfolio management with Zhengyao Jiang; BSc with the University of Liverpool</span></li>
-      <li><span class="yr">2018-24</span><b>Hyperledger</b><span>Linux Foundation intern, then maintainer of the Fabric Python SDK</span></li>
-      <li><span class="yr">2019-20</span><b>NTU · Zhejiang U.</b><span>Privacy-preserving ML at the IoT edge; IEEE IoT Journal paper</span></li>
-      <li><span class="yr">2020-21</span><b>HKBU</b><span>Distributed training: all-reduce algorithms on Horovod</span></li>
-      <li><span class="yr">2022-24</span><b>Hex Trust</b><span>Backend for digital-asset trading in Rust, Go and Node on Kubernetes</span></li>
-      <li class="now"><span class="yr">2024-now</span><b>Weco AI</b><span>Agents for ML engineering and self-improving research</span></li>
+      <li><span class="emo" aria-hidden="true">🎓</span><span class="yr">2016-18</span><b>XJTLU</b><span>BSc; deep RL for portfolio management</span></li>
+      <li><span class="emo" aria-hidden="true">⛓️</span><span class="yr">2018-24</span><b>Hyperledger</b><span>Intern, then Fabric Python SDK maintainer</span></li>
+      <li><span class="emo" aria-hidden="true">🔐</span><span class="yr">2019-20</span><b>NTU · Zhejiang U.</b><span>Private ML at the IoT edge</span></li>
+      <li><span class="emo" aria-hidden="true">🖧</span><span class="yr">2020-21</span><b>HKBU</b><span>All-reduce for distributed training</span></li>
+      <li><span class="emo" aria-hidden="true">📈</span><span class="yr">2022-24</span><b>Hex Trust</b><span>Trading backend in Rust and Go</span></li>
+      <li class="now"><span class="emo" aria-hidden="true">🤖</span><span class="yr">2024-now</span><b>Weco AI</b><span>Agents that do ML research</span></li>
     </ol>
     <dl class="stack">
       <div><dt>Languages</dt><dd>Python · Rust · Go · TypeScript · C</dd></div>
@@ -364,79 +393,42 @@ td .area{font-size:12.5px;color:var(--muted)}
       <h2 id="h-proof">Numbers anyone can check on GitHub.</h2>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n"><span data-to="58">58</span></div><p>open-source projects with my merged code</p></div>
-      <div class="stat"><div class="n"><span data-to="180">180</span><sup>+</sup></div><p>merged pull requests across GitHub</p></div>
-      <div class="stat"><div class="n"><span data-to="7">7</span></div><p>leaderboard records in OpenAI Parameter Golf</p></div>
-      <div class="stat"><div class="n"><span data-to="4.1" data-dec="1" data-suf="k">4.1k</span></div><p>GitHub stars on seedance2-skill, my most-used repo</p></div>
+      <div class="stat"><span class="emo" aria-hidden="true">🧩</span><div class="n"><span data-to="58">58</span></div><p>open-source projects with my merged code</p></div>
+      <div class="stat"><span class="emo" aria-hidden="true">🔀</span><div class="n"><span data-to="180">180</span><sup>+</sup></div><p>merged pull requests</p></div>
+      <div class="stat"><span class="emo" aria-hidden="true">🏅</span><div class="n"><span data-to="7">7</span></div><p>records in OpenAI Parameter Golf</p></div>
+      <div class="stat"><span class="emo" aria-hidden="true">⭐</span><div class="n"><span data-to="4.1" data-dec="1" data-suf="k">4.1k</span></div><p>stars on seedance2-skill</p></div>
     </div>
-
-    <div class="merged">
-      <span class="eyebrow">Merged code in</span>
-      <div class="chips">
-        <a href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">openclaw</a>
-        <a href="https://github.com/Significant-Gravitas/AutoGPT/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">AutoGPT</a>
-        <a href="https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">LangChain</a>
-        <a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">OpenBB</a>
-        <a href="https://github.com/remotion-dev/remotion/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Remotion</a>
-        <a href="https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">goose</a>
-        <a href="https://github.com/agno-agi/agno/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">agno</a>
-        <a href="https://github.com/ManimCommunity/manim/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Manim</a>
-        <a href="https://github.com/pnpm/pnpm/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">pnpm</a>
-        <a href="https://github.com/python-poetry/poetry/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Poetry</a>
-        <a href="https://github.com/invoke-ai/InvokeAI/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">InvokeAI</a>
-        <a href="https://github.com/QwenLM/qwen-code/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Qwen Code</a>
-        <a href="https://github.com/mozilla-ai/llamafile/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">llamafile</a>
-        <a href="https://github.com/oxc-project/oxc/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">oxc</a>
-        <a href="https://github.com/pydantic/pydantic-ai/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Pydantic AI</a>
-        <a href="https://github.com/UKGovernmentBEIS/inspect_ai/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">UK AISI Inspect</a>
-        <a href="https://github.com/openai/parameter-golf/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">OpenAI Parameter Golf</a>
-        <a href="https://github.com/openai/mle-bench/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">OpenAI MLE-bench</a>
-        <a href="https://github.com/microsoft/RD-Agent/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Microsoft RD-Agent</a>
-        <a href="https://github.com/SakanaAI/ShinkaEvolve/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Sakana ShinkaEvolve</a>
-        <a href="https://github.com/kubernetes/website/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Kubernetes</a>
-        <a class="more" href="#upstream">and 37 more</a>
-      </div>
-    </div>
-
     <div class="adopt">
       <span class="eyebrow">Cited, used or merged by</span>
-      <ul class="orgs" aria-label="Organisations that cite, use or merged the work">
-        <li><a href="#ad-openai"><img src="assets/logos/openai.svg" alt="" hidden><span>OpenAI</span></a></li>
-        <li><a href="#ad-meta"><img src="assets/logos/meta.svg" alt="" hidden><span>Meta FAIR</span></a></li>
-        <li><a href="#ad-google"><img src="assets/logos/google-cloud.svg" alt="" hidden><span>Google Cloud</span></a></li>
-        <li><a href="#ad-sakana"><img src="assets/logos/sakana.svg" alt="" hidden><span>Sakana AI</span></a></li>
-        <li><a href="#ad-metr"><img src="assets/logos/metr.svg" alt="" hidden><span>METR</span></a></li>
-        <li><a href="#ad-aisi"><img src="assets/logos/aisi.svg" alt="" hidden><span>UK AISI</span></a></li>
-      </ul>
       <div class="adopt-grid">
-        <article class="ad" id="ad-openai">
-          <span class="who">OpenAI</span>
-          <blockquote>Ran AIDE as the agent scaffold for MLE-bench in the GPT-4.5 system card, and featured my agent's model-compression PR in its Parameter Golf write-up.</blockquote>
-          <div class="src"><a href="https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf">GPT-4.5 system card ↗</a><a href="https://openai.com/index/what-parameter-golf-taught-us/">Parameter Golf write-up ↗</a></div>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/14957082?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">OpenAI</span></div>
+          <blockquote>Used AIDE for MLE-bench in the GPT-4.5 system card, and featured my agent's PR in the Parameter Golf write-up.</blockquote>
+          <div class="src"><a href="https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf">System card ↗</a><a href="https://openai.com/index/what-parameter-golf-taught-us/">Write-up ↗</a></div>
         </article>
-        <article class="ad" id="ad-meta">
-          <span class="who">Meta FAIR</span>
-          <blockquote>Reimplemented AIDE as a baseline in AIRA-dojo, its framework for AI research agents.</blockquote>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/16943930?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">Meta FAIR</span></div>
+          <blockquote>Rebuilt AIDE as a baseline in AIRA-dojo.</blockquote>
           <div class="src"><a href="https://arxiv.org/abs/2507.02554">arXiv 2507.02554 ↗</a></div>
         </article>
-        <article class="ad" id="ad-google">
-          <span class="who">Google Cloud</span>
-          <blockquote>Benchmarked its MLE-STAR agent against AIDE on MLE-bench.</blockquote>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/2810941?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">Google Cloud</span></div>
+          <blockquote>Benchmarked its MLE-STAR agent against AIDE.</blockquote>
           <div class="src"><a href="https://arxiv.org/abs/2506.15692">arXiv 2506.15692 ↗</a></div>
         </article>
-        <article class="ad" id="ad-sakana">
-          <span class="who">Sakana AI</span>
-          <blockquote>Cited AIDE's tree search over code as background for The AI Scientist-v2, which adapts it to multi-stage experiments.</blockquote>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/140988036?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">Sakana AI</span></div>
+          <blockquote>Cited AIDE's tree search over code in The AI Scientist-v2.</blockquote>
           <div class="src"><a href="https://arxiv.org/abs/2504.08066">arXiv 2504.08066 ↗</a></div>
         </article>
-        <article class="ad" id="ad-metr">
-          <span class="who">METR</span>
-          <blockquote>Evaluated frontier models with the AIDE scaffold in RE-Bench, its benchmark of AI R&amp;D against human experts.</blockquote>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/115503932?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">METR</span></div>
+          <blockquote>Ran the AIDE scaffold in RE-Bench, its AI R&amp;D benchmark.</blockquote>
           <div class="src"><a href="https://arxiv.org/abs/2411.15114">arXiv 2411.15114 ↗</a></div>
         </article>
-        <article class="ad" id="ad-aisi">
-          <span class="who">UK AI Security Institute</span>
-          <blockquote>Merged my performance fixes into Inspect, the UK government's LLM evaluation framework.</blockquote>
+        <article class="ad">
+          <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/19221939?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">UK AI Security Institute</span></div>
+          <blockquote>Merged my speedups into Inspect, its LLM eval framework.</blockquote>
           <div class="src"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">inspect_ai #4714 ↗</a></div>
         </article>
       </div>
@@ -449,7 +441,6 @@ td .area{font-size:12.5px;color:var(--muted)}
     <div class="sec-head">
       <span class="eyebrow">Selected work</span>
       <h2 id="h-work">Agents that keep working<br>after I close the laptop.</h2>
-      <p class="lede">Most of what I build is search and evaluation machinery: code that proposes changes, measures them, and keeps only what wins.</p>
     </div>
 
     <div class="feat">
@@ -477,9 +468,9 @@ td .area{font-size:12.5px;color:var(--muted)}
           </svg>
         </div>
         <div class="body">
-          <span class="meta">ML engineering agent · co-author, co-maintainer · 2024-now</span>
+          <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/132215366?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">Weco AI · co-author, co-maintainer</span>
           <h3>AIDE</h3>
-          <p>AIDE treats ML engineering as a tree search over code. It drafts a solution, runs it, debugs or improves the best node, and repeats until the budget runs out. I co-authored the 2025 paper and maintain the open-source release with the Weco team.</p>
+          <p>Tree search over code: draft, run, debug, improve, keep the best. I co-authored the paper and co-maintain the repo.</p>
           <ul class="facts"><li>1.5k stars</li><li>4× the medals of the runner-up scaffold on MLE-bench</li></ul>
           <div class="links"><a class="arrow" href="https://arxiv.org/abs/2502.13138">Read the paper</a><a class="arrow" href="https://github.com/WecoAI/aideml">Code</a></div>
         </div>
@@ -494,9 +485,9 @@ td .area{font-size:12.5px;color:var(--muted)}
           </div>
         </div>
         <div class="body">
-          <span class="meta">Autonomous research · 2026</span>
+          <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/14957082?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">OpenAI challenge · 2026</span>
           <h3>Seven records in Parameter Golf</h3>
-          <p>OpenAI's 44-day challenge asked for the best language model that fits in 16 MB and trains in 10 minutes. I built the research agent that ran for 22 days and filed its own PRs. 1,016 people entered; the agent finished as the top contributor by records set.</p>
+          <p>Best language model in 16 MB and 10 minutes of training. My research agent ran for 22 days, filed its own PRs and set more records than any of the 1,016 human entrants.</p>
           <ul class="facts"><li>25 PRs, 7 records</li><li>cited 435 times by other entrants</li></ul>
           <div class="links"><a class="arrow" href="https://github.com/openai/parameter-golf/tree/main/records/track_10min_16mb">Record track</a><a class="arrow" href="https://github.com/openai/parameter-golf/pull/1769">Best entry</a></div>
         </div>
@@ -505,23 +496,23 @@ td .area{font-size:12.5px;color:var(--muted)}
 
     <div class="small">
       <article class="card"><div class="body">
-        <span class="meta">Agent skill · 2026</span>
+        <span class="meta"><span class="emo" aria-hidden="true">🎬</span>Agent skill · 2026</span>
         <h3>seedance2-skill</h3>
-        <p>A skill that turns a rough idea into a production prompt for the Seedance 2.0 video model. My most-starred repo.</p>
+        <p>Turns a rough idea into a production prompt for the Seedance 2.0 video model.</p>
         <span class="big-n">4.1k stars · 344 forks</span>
         <div class="links"><a class="arrow" href="https://github.com/dexhunter/seedance2-skill">Repo</a><a class="arrow" href="https://seedance2.help">Site</a></div>
       </div></article>
       <article class="card"><div class="body">
-        <span class="meta">Developer tool · 2026</span>
+        <span class="meta"><span class="emo" aria-hidden="true">⏱️</span>Developer tool · 2026</span>
         <h3>Vibe Clock</h3>
-        <p>WakaTime-style tracking for Claude Code, Codex and OpenCode. Renders animated SVG usage cards for a GitHub profile and ships through a Homebrew tap.</p>
+        <p>WakaTime for coding agents: tracks Claude Code, Codex and OpenCode, renders SVG cards for your profile.</p>
         <span class="big-n">Python · SVG · Homebrew</span>
         <div class="links"><a class="arrow" href="https://github.com/dexhunter/vibe-clock">Repo</a></div>
       </div></article>
       <article class="card"><div class="body">
-        <span class="meta">Linux Foundation · 2018-2024</span>
+        <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/7657900?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">Linux Foundation · 2018-24</span>
         <h3>Fabric Python SDK</h3>
-        <p>Maintainer of Hyperledger's Python SDK for Fabric. Ran the v0.7 release and mentored two Hyperledger internships.</p>
+        <p>Maintainer of Hyperledger's Python SDK. Ran the v0.7 release and mentored two internships.</p>
         <span class="big-n">Maintainer · release manager</span>
         <div class="links"><a class="arrow" href="https://github.com/hyperledger/fabric-sdk-py/blob/main/MAINTAINERS.md">Maintainers file</a></div>
       </div></article>
@@ -534,40 +525,34 @@ td .area{font-size:12.5px;color:var(--muted)}
     <div class="sec-head">
       <span class="eyebrow">Open source</span>
       <h2 id="h-up">Merged by other people's maintainers.</h2>
-      <p class="lede">Performance and correctness work in projects I don't own. Since 2025 many of these PRs come from the autonomous agents I build at Weco AI, and each one went through the project's normal review before it was merged.</p>
+      <p class="lede">Speed and correctness fixes in projects I don't own. Many recent ones come from agents I build at Weco AI; every one passed the project's own review.</p>
     </div>
+    <div class="repos">
+      <a class="repo" href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/252820863?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>openclaw</b><small>openclaw · ★ 391k</small></span></a>
+      <a class="repo" href="https://github.com/Significant-Gravitas/AutoGPT/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/130738209?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>AutoGPT</b><small>Significant-Gravitas · ★ 188k</small></span></a>
+      <a class="repo" href="https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/126733545?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>langchain</b><small>langchain-ai · ★ 147k</small></span></a>
+      <a class="repo" href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/80064875?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>OpenBB</b><small>OpenBB-finance · ★ 74k</small></span></a>
+      <a class="repo" href="https://github.com/remotion-dev/remotion/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/85344006?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>remotion</b><small>remotion-dev · ★ 61k</small></span></a>
+      <a class="repo" href="https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/271095942?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>goose</b><small>aaif-goose · ★ 55k</small></span></a>
+      <a class="repo" href="https://github.com/agno-agi/agno/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/104874993?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>agno</b><small>agno-agi · ★ 42k</small></span></a>
+      <a class="repo" href="https://github.com/ManimCommunity/manim/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/65579849?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>manim</b><small>ManimCommunity · ★ 41k</small></span></a>
+      <a class="repo" href="https://github.com/pnpm/pnpm/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/21320719?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pnpm</b><small>pnpm · ★ 37k</small></span></a>
+      <a class="repo" href="https://github.com/python-poetry/poetry/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/48722593?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>poetry</b><small>python-poetry · ★ 34k</small></span></a>
+      <a class="repo" href="https://github.com/invoke-ai/InvokeAI/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/113954515?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>InvokeAI</b><small>invoke-ai · ★ 28k</small></span></a>
+      <a class="repo" href="https://github.com/QwenLM/qwen-code/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/141221163?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>qwen-code</b><small>QwenLM · ★ 28k</small></span></a>
+      <a class="repo" href="https://github.com/mozilla-ai/llamafile/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/129804596?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>llamafile</b><small>mozilla-ai · ★ 26k</small></span></a>
+      <a class="repo" href="https://github.com/oxc-project/oxc/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/149946238?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>oxc</b><small>oxc-project · ★ 23k</small></span></a>
+      <a class="repo" href="https://github.com/pydantic/pydantic-ai/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/110818415?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pydantic-ai</b><small>pydantic · ★ 20k</small></span></a>
+      <a class="repo" href="https://github.com/pipecat-ai/pipecat/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/169612734?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pipecat</b><small>pipecat-ai · ★ 16k</small></span></a>
+    </div>
+    <p class="tbl-note">16 of 58 projects shown, by stars. Full list on my <a href="https://github.com/dexhunter">GitHub profile</a>.</p>
+    <p class="col-title hl-title">Highlights</p>
     <ol class="log">
-      <li><time datetime="2026-08">2026 · Aug</time><div><h3>UK AI Security Institute · Inspect</h3><p>Cut scoring time and memory for clustered standard errors (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">#4714</a>) and made tool-result media extraction linear in conversation length (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4628">#4628</a>).</p></div></li>
-      <li><time datetime="2026-07">2026 · Jul-Sep</time><div><h3>Agent runtimes</h3><p>Performance fixes merged into <a href="https://github.com/openclaw/openclaw/pull/99714">openclaw</a>, <a href="https://github.com/Significant-Gravitas/AutoGPT/pull/13478">AutoGPT</a>, <a href="https://github.com/aaif-goose/goose/pull/10409">goose</a>, <a href="https://github.com/QwenLM/qwen-code/pull/8253">Qwen Code</a>, <a href="https://github.com/pydantic/pydantic-ai/pull/6485">Pydantic AI</a>, <a href="https://github.com/agno-agi/agno/pull/8907">agno</a> and <a href="https://github.com/BoundaryML/baml/pull/3975">BAML</a>.</p></div></li>
-      <li><time datetime="2026-04">2026 · Apr</time><div><h3>OpenAI · Parameter Golf</h3><p>Record-track entries with a best 5-seed mean of 1.0645 val BPB (<a href="https://github.com/openai/parameter-golf/pull/1769">#1769</a>). OpenAI picked out <a href="https://github.com/openai/parameter-golf/pull/1060">#1060</a>, a model-compression change, in its write-up.</p></div></li>
-      <li><time datetime="2026">2026</time><div><h3>Evolutionary search frameworks</h3><p>Removed redundant AST parsing in Sakana AI's <a href="https://github.com/SakanaAI/ShinkaEvolve/pull/175">ShinkaEvolve</a> and bounded process-pool shutdown latency in <a href="https://github.com/algorithmicsuperintelligence/openevolve/pull/469">OpenEvolve</a>.</p></div></li>
-      <li><time datetime="2025">2025</time><div><h3>Agent benchmarks</h3><p>Docs fixes in OpenAI's <a href="https://github.com/openai/mle-bench/pull/101">MLE-bench</a>, Meta's <a href="https://github.com/facebookresearch/aira-dojo/pull/2">aira-dojo</a> and Microsoft's <a href="https://github.com/microsoft/RD-Agent/pull/1249">RD-Agent</a>, plus 12 merged PRs to <a href="https://github.com/WecoAI/weco-cli">weco-cli</a>.</p></div></li>
-      <li><time datetime="2018">2018-2021</time><div><h3>Hyperledger</h3><p>Maintained the <a href="https://github.com/hyperledger/fabric-sdk-py">Fabric Python SDK</a> and contributed to <a href="https://github.com/hyperledger-cello/cello">Cello</a> as a Linux Foundation intern.</p></div></li>
+      <li><time>2026</time><div><div class="hl-head"><h3>UK AI Security Institute · Inspect</h3><div class="stack-av"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714" title="Inspect"><img class="av" src="https://avatars.githubusercontent.com/u/19221939?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Faster clustered-stderr scoring (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">#4714</a>) and linear-time media extraction (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4628">#4628</a>).</p></div></li>
+      <li><time>2026</time><div><div class="hl-head"><h3>Seven agent runtimes</h3><div class="stack-av"><a href="https://github.com/openclaw/openclaw/pull/99714" title="openclaw"><img class="av" src="https://avatars.githubusercontent.com/u/252820863?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/Significant-Gravitas/AutoGPT/pull/13478" title="AutoGPT"><img class="av" src="https://avatars.githubusercontent.com/u/130738209?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/aaif-goose/goose/pull/10409" title="goose"><img class="av" src="https://avatars.githubusercontent.com/u/271095942?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/QwenLM/qwen-code/pull/8253" title="Qwen Code"><img class="av" src="https://avatars.githubusercontent.com/u/141221163?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/pydantic/pydantic-ai/pull/6485" title="Pydantic AI"><img class="av" src="https://avatars.githubusercontent.com/u/110818415?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/agno-agi/agno/pull/8907" title="agno"><img class="av" src="https://avatars.githubusercontent.com/u/104874993?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/BoundaryML/baml/pull/3975" title="BAML"><img class="av" src="https://avatars.githubusercontent.com/u/124114301?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Performance fixes in openclaw, AutoGPT, goose, Qwen Code, Pydantic AI, agno and BAML.</p></div></li>
+      <li><time>2026</time><div><div class="hl-head"><h3>Evolutionary search</h3><div class="stack-av"><a href="https://github.com/SakanaAI/ShinkaEvolve/pull/175" title="ShinkaEvolve"><img class="av" src="https://avatars.githubusercontent.com/u/140988036?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/algorithmicsuperintelligence/openevolve/pull/469" title="OpenEvolve"><img class="av" src="https://avatars.githubusercontent.com/u/238764598?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Cut redundant AST parsing in Sakana's ShinkaEvolve and bounded shutdown latency in OpenEvolve.</p></div></li>
+      <li><time>2018-21</time><div><div class="hl-head"><h3>Hyperledger</h3><div class="stack-av"><a href="https://github.com/hyperledger/fabric-sdk-py" title="Fabric Python SDK"><img class="av" src="https://avatars.githubusercontent.com/u/7657900?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/hyperledger-cello/cello" title="Cello"><img class="av" src="https://avatars.githubusercontent.com/u/185365251?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Maintained the Fabric Python SDK and interned on Cello for the Linux Foundation.</p></div></li>
     </ol>
-
-    <div class="tbl-wrap">
-      <table>
-        <caption><span class="eyebrow">Largest projects with my merged PRs</span></caption>
-        <thead><tr><th>Project</th><th>Area</th><th class="num">Stars</th><th class="num">Latest merge</th></tr></thead>
-        <tbody>
-          <tr><td><a href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">openclaw/openclaw</a></td><td class="area">Agent runtime</td><td class="num">391k</td><td class="num">Jul 2026</td></tr>
-          <tr><td><a href="https://github.com/Significant-Gravitas/AutoGPT/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">Significant-Gravitas/AutoGPT</a></td><td class="area">Agent runtime</td><td class="num">188k</td><td class="num">Sep 2026</td></tr>
-          <tr><td><a href="https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">langchain-ai/langchain</a></td><td class="area">LLM framework</td><td class="num">147k</td><td class="num">Mar 2024</td></tr>
-          <tr><td><a href="https://github.com/OpenBB-finance/OpenBB/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">OpenBB-finance/OpenBB</a></td><td class="area">Financial data</td><td class="num">74k</td><td class="num">Sep 2026</td></tr>
-          <tr><td><a href="https://github.com/remotion-dev/remotion/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">remotion-dev/remotion</a></td><td class="area">Video in React</td><td class="num">61k</td><td class="num">Aug 2026</td></tr>
-          <tr><td><a href="https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">aaif-goose/goose</a></td><td class="area">Coding agent</td><td class="num">55k</td><td class="num">Jul 2026</td></tr>
-          <tr><td><a href="https://github.com/agno-agi/agno/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">agno-agi/agno</a></td><td class="area">Agent framework</td><td class="num">42k</td><td class="num">Jul 2026</td></tr>
-          <tr><td><a href="https://github.com/ManimCommunity/manim/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">ManimCommunity/manim</a></td><td class="area">Math animation</td><td class="num">41k</td><td class="num">Aug 2026</td></tr>
-          <tr><td><a href="https://github.com/pnpm/pnpm/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">pnpm/pnpm</a></td><td class="area">Package manager</td><td class="num">37k</td><td class="num">Sep 2026</td></tr>
-          <tr><td><a href="https://github.com/python-poetry/poetry/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">python-poetry/poetry</a></td><td class="area">Package manager</td><td class="num">34k</td><td class="num">Aug 2026</td></tr>
-          <tr><td><a href="https://github.com/invoke-ai/InvokeAI/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">invoke-ai/InvokeAI</a></td><td class="area">Image generation</td><td class="num">28k</td><td class="num">Aug 2026</td></tr>
-          <tr><td><a href="https://github.com/QwenLM/qwen-code/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">QwenLM/qwen-code</a></td><td class="area">Coding agent</td><td class="num">28k</td><td class="num">Aug 2026</td></tr>
-          <tr><td><a href="https://github.com/mozilla-ai/llamafile/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">mozilla-ai/llamafile</a></td><td class="area">LLM inference</td><td class="num">26k</td><td class="num">Sep 2026</td></tr>
-          <tr><td><a href="https://github.com/oxc-project/oxc/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged">oxc-project/oxc</a></td><td class="area">JS toolchain (Rust)</td><td class="num">23k</td><td class="num">Sep 2026</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="tbl-note">Star counts from my GitHub README, October 2026. The full list of 58 projects is on my <a href="https://github.com/dexhunter">GitHub profile</a> and refreshes weekly.</p>
   </div>
 </section>
 
@@ -579,30 +564,30 @@ td .area{font-size:12.5px;color:var(--muted)}
     </div>
     <div class="two">
       <div>
-        <p class="col-title">Publications</p>
+        <p class="col-title"><span class="emo" aria-hidden="true">📄</span> Publications</p>
         <ul class="plist">
           <li><span class="y">2025 · arXiv</span><b>AIDE: AI-Driven Exploration in the Space of Code</b><a href="https://arxiv.org/abs/2502.13138">arXiv 2502.13138</a></li>
-          <li><span class="y">2020 · IEEE Internet of Things Journal</span><b>Lightweight and Unobtrusive Data Obfuscation at IoT Edge for Remote Inference</b><span>First author</span><a href="https://doi.org/10.1109/JIOT.2020.2983278">DOI 10.1109/JIOT.2020.2983278</a></li>
+          <li><span class="y">2020 · IEEE Internet of Things Journal · first author</span><b>Lightweight and Unobtrusive Data Obfuscation at IoT Edge for Remote Inference</b><a href="https://doi.org/10.1109/JIOT.2020.2983278">DOI 10.1109/JIOT.2020.2983278</a></li>
           <li><span class="y">2019 · ACM AIChallengeIoT</span><b>Challenges of Privacy-Preserving Machine Learning in IoT</b><a href="https://doi.org/10.1145/3363347.3363357">DOI 10.1145/3363347.3363357</a></li>
-          <li><span class="y">2017 · arXiv</span><b>A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem</b><span>With Zhengyao Jiang and Jinjun Liang</span><a href="https://arxiv.org/abs/1706.10059">arXiv 1706.10059</a></li>
+          <li><span class="y">2017 · arXiv</span><b>A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem</b><a href="https://arxiv.org/abs/1706.10059">arXiv 1706.10059</a></li>
         </ul>
       </div>
       <div>
-        <p class="col-title">Talks</p>
+        <p class="col-title"><span class="emo" aria-hidden="true">🎤</span> Talks</p>
         <ul class="plist">
           <li><span class="y">2026 · AI Engineer World's Fair, San Francisco</span><b>Hands-on AutoResearch: Cracking OpenAI's Parameter Golf</b><span>Workshop with the Weco AI team</span></li>
           <li><span class="y">2024 · Network School, first cohort</span><b>Algorithmic Trading Workshop</b><a href="https://slides.dex.moe">Slides</a></li>
           <li><span class="y">2019</span><b>Deep Learning for Power System Security Assessment</b><a href="https://slides.dex.moe">Slides</a></li>
         </ul>
         <div class="awards">
-          <p class="col-title">Selected awards</p>
+          <p class="col-title"><span class="emo" aria-hidden="true">🏆</span> Selected awards</p>
           <ul>
-            <li><span>2024</span>Dev bounty winner, Network School (Farcaster social-graph visualiser)</li>
-            <li><span>2020</span>Hyperledger Diversity Scholarship, Hyperledger Global Forum</li>
-            <li><span>2018</span>Special Prize (US$10,000), Wanxiang Blockchain Hackathon by Qtum</li>
-            <li><span>2018</span>1st Prize, EOS Hackathon Hangzhou (team)</li>
-            <li><span>2018</span>CNCF Diversity Scholarship, KubeCon + CloudNativeCon China</li>
-            <li><span>2017</span>1st Prize of 70+ teams, Hack x FDU</li>
+            <li><span>🛠️</span>Dev bounty winner, Network School (Farcaster social-graph visualiser), 2024</li>
+            <li><span>🎓</span>Hyperledger Diversity Scholarship, Hyperledger Global Forum, 2020</li>
+            <li><span>🏆</span>Special Prize (US$10,000), Wanxiang Blockchain Hackathon by Qtum, 2018</li>
+            <li><span>🥇</span>1st Prize, EOS Hackathon Hangzhou (team), 2018</li>
+            <li><span>🎓</span>CNCF Diversity Scholarship, KubeCon + CloudNativeCon China, 2018</li>
+            <li><span>🥇</span>1st Prize of 70+ teams, Hack x FDU, 2017</li>
           </ul>
         </div>
       </div>
@@ -660,10 +645,10 @@ td .area{font-size:12.5px;color:var(--muted)}
   // Scroll reveal. Only elements that start below the fold are hidden, so the first frame is always complete.
   var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(still||!('IntersectionObserver' in window)) return;
-  var sel='.sec-head,.stats,.merged,.orgs,.ad,.card,.log li,.tbl-wrap,.plist li,.awards,.invite .wrap>*,.foot-top>div,.path';
+  var sel='.sec-head,.stats,.ad,.card,.log li,.repo,.plist li,.awards,.invite .wrap>*,.foot-top>div,.path';
   var els=[].slice.call(document.querySelectorAll(sel));
   // stagger siblings in grids and lists
-  ['.adopt-grid','.feat','.small','.log','.plist','.foot-top','.invite .wrap'].forEach(function(q){
+  ['.adopt-grid','.repos','.feat','.small','.log','.plist','.foot-top','.invite .wrap'].forEach(function(q){
     document.querySelectorAll(q).forEach(function(box){[].forEach.call(box.children,function(c,i){c.style.setProperty('--d',(i%6)*0.08+'s')})});
   });
   document.querySelectorAll('.cpath li').forEach(function(li,i){li.style.setProperty('--d',(0.2+i*0.18)+'s')});
@@ -678,13 +663,6 @@ td .area{font-size:12.5px;color:var(--muted)}
   })},{rootMargin:'0px 0px -12% 0px',threshold:0.12});
   els.forEach(function(el){
     if(el.getBoundingClientRect().top>innerHeight*0.92){ if(!el.classList.contains('path')) el.classList.add('rv'); el.classList.add('pre'); io.observe(el); }
-  });
-})();
-(function(){
-  // Show an organisation's logo only if its file exists in assets/logos/; otherwise keep the typeset name
-  document.querySelectorAll('.orgs img').forEach(function(img){
-    function ok(){img.hidden=false;img.alt=img.nextElementSibling.textContent;img.parentNode.classList.add('has-logo')}
-    if(img.complete&&img.naturalWidth) ok(); else { img.addEventListener('load',ok); img.addEventListener('error',function(){img.remove()}); }
   });
 })();
 (function(){
