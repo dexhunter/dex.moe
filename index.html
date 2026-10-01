@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#14214a">
 <meta property="og:title" content="Dex Xu · 许迪星">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/6930518?v=4&amp;s=600">
 <title>Dex Xu · 许迪星</title>
@@ -149,13 +152,23 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .chips a:hover{border-color:var(--ink-2);color:var(--ink)}
 .chips .more{border-style:dashed;color:var(--muted)}
 .adopt{margin-top:64px;display:grid;gap:22px}
-.adopt-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.adopt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .ad{background:var(--ivory);border-radius:14px;padding:22px 22px 20px;display:grid;gap:12px;align-content:start;min-width:0}
 .ad .who{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--link)}
 .ad blockquote{margin:0;font:400 17px/1.45 var(--serif);color:var(--ink)}
-.ad a{font-size:13px;color:var(--muted);text-decoration:none;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
-.ad a:hover{color:var(--ink)}
-@media (max-width:980px){.adopt-grid{grid-template-columns:1fr 1fr}}
+.ad .src{display:flex;flex-wrap:wrap;gap:6px 16px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
+.ad .src a{font-size:13px;color:var(--muted);text-decoration:none}
+.ad .src a:hover{color:var(--ink)}
+.ad:target{outline:2px solid var(--link);outline-offset:2px}
+.orgs{list-style:none;margin:0 0 6px;padding:22px 0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.orgs li{display:flex;justify-content:center;min-width:0}
+.orgs li + li{border-left:1px solid var(--line)}
+.orgs a{display:flex;align-items:center;justify-content:center;height:40px;padding:0 12px;text-decoration:none;color:var(--ink-2);font:600 clamp(16px,1.6vw,21px)/1 var(--sans);letter-spacing:-.01em;white-space:nowrap;opacity:.78;transition:opacity .2s}
+.orgs a:hover{opacity:1}
+.orgs img{height:26px;width:auto;max-width:132px;filter:grayscale(1)}
+.orgs a.has-logo span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:980px){.adopt-grid{grid-template-columns:1fr 1fr}.orgs{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:18px}.orgs li:nth-child(4){border-left:0}}
+@media (max-width:560px){.orgs{grid-template-columns:repeat(2,minmax(0,1fr))}.orgs li:nth-child(odd){border-left:0}.orgs li:nth-child(4){border-left:1px solid var(--line)}}
 @media (max-width:560px){.adopt-grid{grid-template-columns:1fr}}
 
 /* Selected work */
@@ -360,27 +373,45 @@ td .area{font-size:12.5px;color:var(--muted)}
     </div>
 
     <div class="adopt">
-      <span class="eyebrow">Who builds on the work</span>
+      <span class="eyebrow">Cited, used or merged by</span>
+      <ul class="orgs" aria-label="Organisations that cite, use or merged the work">
+        <li><a href="#ad-openai"><img src="assets/logos/openai.svg" alt="" hidden><span>OpenAI</span></a></li>
+        <li><a href="#ad-meta"><img src="assets/logos/meta.svg" alt="" hidden><span>Meta FAIR</span></a></li>
+        <li><a href="#ad-google"><img src="assets/logos/google-cloud.svg" alt="" hidden><span>Google Cloud</span></a></li>
+        <li><a href="#ad-sakana"><img src="assets/logos/sakana.svg" alt="" hidden><span>Sakana AI</span></a></li>
+        <li><a href="#ad-metr"><img src="assets/logos/metr.svg" alt="" hidden><span>METR</span></a></li>
+        <li><a href="#ad-aisi"><img src="assets/logos/aisi.svg" alt="" hidden><span>UK AISI</span></a></li>
+      </ul>
       <div class="adopt-grid">
-        <article class="ad">
+        <article class="ad" id="ad-openai">
           <span class="who">OpenAI</span>
-          <blockquote>Ran AIDE as the agent scaffold for MLE-bench evaluations in the GPT-4.5 system card.</blockquote>
-          <a href="https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf">GPT-4.5 system card ↗</a>
+          <blockquote>Ran AIDE as the agent scaffold for MLE-bench in the GPT-4.5 system card, and featured my agent's model-compression PR in its Parameter Golf write-up.</blockquote>
+          <div class="src"><a href="https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf">GPT-4.5 system card ↗</a><a href="https://openai.com/index/what-parameter-golf-taught-us/">Parameter Golf write-up ↗</a></div>
         </article>
-        <article class="ad">
+        <article class="ad" id="ad-meta">
           <span class="who">Meta FAIR</span>
-          <blockquote>Reimplemented AIDE as a baseline for its own AI research agents.</blockquote>
-          <a href="https://arxiv.org/abs/2507.02554">arXiv 2507.02554 ↗</a>
+          <blockquote>Reimplemented AIDE as a baseline in AIRA-dojo, its framework for AI research agents.</blockquote>
+          <div class="src"><a href="https://arxiv.org/abs/2507.02554">arXiv 2507.02554 ↗</a></div>
         </article>
-        <article class="ad">
-          <span class="who">OpenAI</span>
-          <blockquote>Featured one of my agent's model-compression PRs in its Parameter Golf write-up.</blockquote>
-          <a href="https://openai.com/index/what-parameter-golf-taught-us/">What Parameter Golf taught us ↗</a>
+        <article class="ad" id="ad-google">
+          <span class="who">Google Cloud</span>
+          <blockquote>Benchmarked its MLE-STAR agent against AIDE on MLE-bench.</blockquote>
+          <div class="src"><a href="https://arxiv.org/abs/2506.15692">arXiv 2506.15692 ↗</a></div>
         </article>
-        <article class="ad">
+        <article class="ad" id="ad-sakana">
+          <span class="who">Sakana AI</span>
+          <blockquote>Cited AIDE's tree search over code as background for The AI Scientist-v2, which adapts it to multi-stage experiments.</blockquote>
+          <div class="src"><a href="https://arxiv.org/abs/2504.08066">arXiv 2504.08066 ↗</a></div>
+        </article>
+        <article class="ad" id="ad-metr">
+          <span class="who">METR</span>
+          <blockquote>Evaluated frontier models with the AIDE scaffold in RE-Bench, its benchmark of AI R&amp;D against human experts.</blockquote>
+          <div class="src"><a href="https://arxiv.org/abs/2411.15114">arXiv 2411.15114 ↗</a></div>
+        </article>
+        <article class="ad" id="ad-aisi">
           <span class="who">UK AI Security Institute</span>
           <blockquote>Merged my performance fixes into Inspect, the UK government's LLM evaluation framework.</blockquote>
-          <a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">inspect_ai #4714 ↗</a>
+          <div class="src"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">inspect_ai #4714 ↗</a></div>
         </article>
       </div>
     </div>
@@ -599,6 +630,13 @@ td .area{font-size:12.5px;color:var(--muted)}
 </footer>
 
 <script>
+(function(){
+  // Show an organisation's logo only if its file exists in assets/logos/; otherwise keep the typeset name
+  document.querySelectorAll('.orgs img').forEach(function(img){
+    function ok(){img.hidden=false;img.alt=img.nextElementSibling.textContent;img.parentNode.classList.add('has-logo')}
+    if(img.complete&&img.naturalWidth) ok(); else { img.addEventListener('load',ok); img.addEventListener('error',function(){img.remove()}); }
+  });
+})();
 (function(){
   var btn=document.getElementById('copy'), code=document.getElementById('email');
   btn.addEventListener('click',function(){
