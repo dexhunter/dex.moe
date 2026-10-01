@@ -258,6 +258,22 @@ td .area{font-size:12.5px;color:var(--muted)}
 .awards li span{line-height:0}
 .awards li .av{width:22px;height:22px;border-radius:5px;box-shadow:0 0 0 1px var(--line)}
 
+.recs{background:var(--ai-2)}
+.recs h2{color:var(--on-ai)}
+.rec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.rec{margin:0;padding:26px 26px 22px;border:1px solid var(--ai-line);border-radius:16px;background:rgba(242,238,228,.035);display:grid;gap:18px;align-content:space-between;min-width:0;transition:border-color .25s,background .25s,opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rec:hover{border-color:rgba(242,238,228,.3);background:rgba(242,238,228,.06)}
+.rec blockquote{margin:0;font:400 17px/1.55 var(--serif);color:var(--on-ai)}
+.rec blockquote::before{content:"\201C";display:block;font:600 44px/0.6 var(--serif);color:var(--star);margin-bottom:10px}
+.rec.feature{grid-column:1/-1;padding:34px 36px 28px}
+.rec.feature blockquote{font-size:clamp(20px,2.2vw,26px);line-height:1.45;max-width:58ch}
+.rec figcaption{display:flex;align-items:center;gap:12px}
+.rec .mono{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--on-ai);color:var(--ai);font:600 13px/1 var(--sans);letter-spacing:.02em}
+.rec b{display:block;font:600 15px/1.3 var(--sans);color:var(--on-ai)}
+.rec small{display:block;font:400 13px/1.4 var(--sans);color:var(--on-ai-3)}
+.rec-more{margin-top:28px;color:var(--on-ai)}
+@media (max-width:760px){.rec-grid{grid-template-columns:1fr}.rec.feature{padding:26px}}
+
 /* Papers + talks */
 .papers{background:var(--paper)}
 .two{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,5vw,72px)}
@@ -330,6 +346,7 @@ td .area{font-size:12.5px;color:var(--muted)}
     </a>
     <nav class="nav" aria-label="Sections">
       <a class="txt" href="#work">Work</a>
+      <a class="txt" href="#recs">Recommendations</a>
       <a class="txt" href="#upstream">Open source</a>
       <a class="txt" href="#papers">Papers</a>
       <a class="txt" href="https://blog.dex.moe">Blog</a>
@@ -524,6 +541,38 @@ td .area{font-size:12.5px;color:var(--muted)}
   </div>
 </section>
 
+<section class="sec recs dark" id="recs" aria-labelledby="h-recs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Recommendations</span>
+      <h2 id="h-recs">In their words.</h2>
+    </div>
+    <div class="rec-grid">
+      <figure class="rec feature">
+        <blockquote>He led the project on privacy-preserving machine learning in IoT. He has a deep understanding of machine learning and can always come up with creative ideas. At the same time, he is prudent. He will try out every possible solution to the problem and compare them in detail.</blockquote>
+        <figcaption><span class="mono" aria-hidden="true">MZ</span><span><b>Mengyao (Vivian) Zheng</b><small>Worked with Dex at NTU · now at Genentech · 2019</small></span></figcaption>
+      </figure>
+      <figure class="rec ">
+        <blockquote>Dixing is one of the most talented blockchain engineers I have ever met. He has a very solid blockchain domain knowledge and his technical skills impressed my clients.</blockquote>
+        <figcaption><span class="mono" aria-hidden="true">JT</span><span><b>Josh Tong</b><small>Senior tech recruiter, Middle East and APAC · 2022</small></span></figcaption>
+      </figure>
+      <figure class="rec ">
+        <blockquote>He implemented most of the algorithm and had deep understanding of the problem. [...] Dixing is an exceptional researcher and developer and would be a valuable asset for any team.</blockquote>
+        <figcaption><span class="mono" aria-hidden="true">JW</span><span><b>Jingjue Wei</b><small>Worked with Dex on portfolio management research · 2019</small></span></figcaption>
+      </figure>
+      <figure class="rec ">
+        <blockquote>Dixing is exceptionally knowledgeable, effective and hardworking. [...] Dixing attended Hackthons and won the first place for several times as a team leader, providing solutions to blockchain-related problems.</blockquote>
+        <figcaption><span class="mono" aria-hidden="true">BZ</span><span><b>Zhihe (Bob) Zhao</b><small>CEO of AxiomsTen, Forbes 30 Under 30 · studied with Dex · 2019</small></span></figcaption>
+      </figure>
+      <figure class="rec ">
+        <blockquote>He told me that "How can I learn more if you only expect a bare minimum from me? I just hope to learn more." and he indeed finished far beyond we could ever imagine.</blockquote>
+        <figcaption><span class="mono" aria-hidden="true">QZ</span><span><b>Qing Zhang</b><small>Bioinformatics scientist at Illumina · studied with Dex · 2019</small></span></figcaption>
+      </figure>
+    </div>
+    <a class="arrow rec-more" href="https://www.linkedin.com/in/dex-xu/details/recommendations/">Read the full recommendations on LinkedIn</a>
+  </div>
+</section>
+
 <section class="sec up" id="upstream" aria-labelledby="h-up">
   <div class="wrap">
     <div class="sec-head">
@@ -649,10 +698,10 @@ td .area{font-size:12.5px;color:var(--muted)}
   // Scroll reveal. Only elements that start below the fold are hidden, so the first frame is always complete.
   var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(still||!('IntersectionObserver' in window)) return;
-  var sel='.sec-head,.stats,.ad,.card,.log li,.repo,.plist li,.awards,.invite .wrap>*,.foot-top>div,.path';
+  var sel='.sec-head,.stats,.ad,.card,.rec,.log li,.repo,.plist li,.awards,.invite .wrap>*,.foot-top>div,.path';
   var els=[].slice.call(document.querySelectorAll(sel));
   // stagger siblings in grids and lists
-  ['.adopt-grid','.repos','.feat','.small','.log','.plist','.foot-top','.invite .wrap'].forEach(function(q){
+  ['.adopt-grid','.rec-grid','.repos','.feat','.small','.log','.plist','.foot-top','.invite .wrap'].forEach(function(q){
     document.querySelectorAll(q).forEach(function(box){[].forEach.call(box.children,function(c,i){c.style.setProperty('--d',(i%6)*0.08+'s')})});
   });
   document.querySelectorAll('.cpath li').forEach(function(li,i){li.style.setProperty('--d',(0.2+i*0.18)+'s')});
