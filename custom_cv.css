@@ -66,3 +66,16 @@
   }
 
   .tc{color:#0000FF}
+
+  /* Experience records: title or organisation on the left, date or location on the right */
+  ul.itemize1 > li > p.noindent,
+  ul.itemize2 > li > p.noindent {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1em;
+  }
+  ul.itemize1 > li > p.noindent > span:first-child,
+  ul.itemize2 > li > p.noindent > span:first-child { min-width: 0; }
+  ul.itemize1 > li > p.noindent > span:last-child,
+  ul.itemize2 > li > p.noindent > span:last-child { flex: none; white-space: nowrap; text-align: right; }
