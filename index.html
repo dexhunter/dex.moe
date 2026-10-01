@@ -7,18 +7,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#14214a">
-<meta property="og:title" content="Dex Xu · 许迪星">
+<meta property="og:title" content="Dex Xu">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/6930518?v=4&amp;s=600">
-<title>Dex Xu · 许迪星</title>
+<title>Dex Xu</title>
 <meta name="description" content="Dixing (Dex) Xu builds autonomous agents for ML engineering and research at Weco AI in London, UK. AIDE co-author, open-source contributor to 58 projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&text=%E8%BF%AA%E6%98%9F%E8%AE%B8&display=swap">
 <style>
 /* Layout: template rhythm of dark indigo bands (hero, path, footer) alternating with paper bands; 1200px wrap, serif display over a quiet sans. */
 :root{
-  /* 藍 ai-iro: Japanese indigo, a pun on AI; night-sky ground for "via lactea" and 迪星 (star) */
+  /* ai-iro: Japanese indigo, a pun on AI; night-sky ground for "via lactea" */
   --ai:#14214a;          /* hero */
   --ai-2:#0f1a3c;        /* path band */
   --ai-3:#0a1230;        /* footer, deepest */
@@ -36,8 +35,7 @@
   --muted:#686c7e;
   --line:#dddbd2;
   --link:#2b45a6;
-  --serif:"Source Serif 4",Georgia,"Noto Serif SC","Songti SC",serif;
-  --cjk:"Noto Serif SC","Songti SC","STSong",serif;
+  --serif:"Source Serif 4",Georgia,serif;
   --sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC",sans-serif;
   --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --wrap:1200px;
@@ -70,9 +68,9 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .top{position:absolute;inset:0 0 auto 0;z-index:5;padding-top:env(safe-area-inset-top,0px)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-ai)}
-.seal{width:36px;height:36px;border-radius:8px;background:var(--on-ai);color:var(--ai);display:grid;place-items:center;font:900 15px/1 var(--cjk);letter-spacing:-.02em}
+.seal{width:36px;height:36px;display:block;flex:none}
 .brand b{font:600 17px/1.1 var(--serif);display:block}
-.brand small{font:400 11px/1.2 var(--cjk);color:var(--on-ai-3);letter-spacing:.2em}
+.brand small{font:400 11px/1.2 var(--sans);color:var(--on-ai-3);letter-spacing:.08em}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{color:var(--on-ai-2);text-decoration:none;font-size:14px}
 .nav a:hover{color:var(--on-ai)}
@@ -101,18 +99,26 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .follow a{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(242,238,228,.08);color:var(--on-ai-2);transition:background .2s,color .2s}
 .follow a:hover{background:rgba(242,238,228,.16);color:var(--on-ai)}
 .follow svg{width:16px;height:16px;fill:currentColor}
-.portrait{position:relative;min-height:420px;display:grid;place-items:center}
-.portrait .han{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:900 clamp(150px,19vw,250px)/1 var(--cjk);color:var(--on-ai);opacity:.92;letter-spacing:-.04em;user-select:none}
-.portrait .han span:last-child{transform:translateY(14%)}
-.portrait figure{position:relative;margin:0;width:clamp(180px,20vw,250px);aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px var(--ai),0 0 0 9px var(--ai-line),0 30px 60px rgba(0,0,0,.35);transform:translate(-10%,6%)}
+.portrait{position:relative;min-height:460px;display:grid;place-items:center}
+.orbits{position:absolute;left:50%;top:50%;width:min(100%,500px);aspect-ratio:1;transform:translate(-50%,-50%);overflow:visible;pointer-events:none}
+.orbits .ring{fill:none;stroke:var(--ai-line);stroke-width:1}
+.orbits .ring.dash{stroke-dasharray:2 7}
+.orbits g{transform-origin:250px 250px;animation:spin var(--t,80s) linear infinite}
+.orbits g.rev{animation-direction:reverse}
+.orbits .sat{fill:var(--on-ai)}
+.orbits .gold{fill:var(--star)}
+.orbits .halo{fill:var(--star);opacity:.18;animation:pulse 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.9);opacity:0}}
+.portrait figure{position:relative;margin:0;width:clamp(180px,20vw,250px);aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px var(--ai),0 0 0 9px var(--ai-line),0 30px 60px rgba(0,0,0,.35)}
 .portrait figure img{width:100%;height:100%;object-fit:cover}
 .portrait .motto{position:absolute;right:0;bottom:6px;max-width:260px;text-align:right;font:italic 400 14px/1.45 var(--serif);color:var(--on-ai-3)}
 .portrait .motto small{display:block;font:400 11px/1.4 var(--sans);font-style:normal;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr}
   .portrait{min-height:300px;order:-1}
-  .portrait .han{font-size:clamp(130px,40vw,200px)}
-  .portrait figure{width:min(40vw,168px);transform:translate(-4%,4%)}
+  .portrait figure{width:min(40vw,168px)}
+  .orbits{width:min(96vw,330px)}
   .portrait .motto{display:none}
 }
 
@@ -263,6 +269,22 @@ td .area{font-size:12.5px;color:var(--muted)}
 @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
 .hero-copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .hero-copy>*:nth-child(2){animation-delay:.06s}.hero-copy>*:nth-child(3){animation-delay:.12s}.hero-copy>*:nth-child(4){animation-delay:.18s}
+.rv{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.pre{opacity:0;transform:translateY(22px)}
+.cpath::before{transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.path.pre .cpath::before{transform:scaleX(0)}
+.cpath li{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.path.pre .cpath li{opacity:0;transform:translateY(12px)}
+.cpath li::before{transition:background .4s,border-color .4s,box-shadow .4s;transition-delay:var(--d,0s)}
+.draw{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1) .3s}
+.card.pre .draw{stroke-dashoffset:1}
+.pg .bar i{transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.7,.2,1) .25s}
+.card.pre .pg .bar i{transform:scaleX(0)}
+.card.pre .pg .bar.rec i{transition-delay:.5s}
+.chips a{transition:border-color .2s,color .2s,transform .2s}
+.chips a:hover{transform:translateY(-2px)}
+.card{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1),box-shadow .3s;transition-delay:var(--d,0s)}
+.card:hover{box-shadow:0 18px 40px -24px rgba(18,23,49,.45)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -270,8 +292,8 @@ td .area{font-size:12.5px;color:var(--muted)}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Dex Xu, home">
-      <span class="seal" aria-hidden="true">迪星</span>
-      <span><b>Dex Xu</b><small>许迪星</small></span>
+      <svg class="seal" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#f2eee4"/><path fill="#14214a" fill-rule="evenodd" d="M12 15h13a17 17 0 0 1 0 34H12zM19 21.5h5.5a10.5 10.5 0 0 1 0 21H19z"/><path fill="#c9922f" d="M49 8c.9 5.2 2.8 7.1 8 8-5.2.9-7.1 2.8-8 8-.9-5.2-2.8-7.1-8-8 5.2-.9 7.1-2.8 8-8z"/></svg>
+      <span><b>Dex Xu</b><small>Agents · London</small></span>
     </a>
     <nav class="nav" aria-label="Sections">
       <a class="txt" href="#work">Work</a>
@@ -305,7 +327,11 @@ td .area{font-size:12.5px;color:var(--muted)}
       </div>
     </div>
     <div class="portrait">
-      <div class="han" aria-hidden="true"><span>迪</span><span>星</span></div>
+      <svg class="orbits" viewBox="0 0 500 500" aria-hidden="true">
+        <g style="--t:70s"><circle class="ring" cx="250" cy="250" r="160"/><circle class="sat" cx="410" cy="250" r="3.5"/></g>
+        <g class="rev" style="--t:110s"><circle class="ring dash" cx="250" cy="250" r="200"/><circle class="halo" cx="108.6" cy="108.6" r="9"/><path class="gold" d="M108.6 96.6c1.2 7 3.4 9.4 10.4 10.6-7 1.2-9.2 3.6-10.4 10.6-1.2-7-3.4-9.4-10.4-10.6 7-1.2 9.2-3.6 10.4-10.6z"/></g>
+        <g style="--t:160s"><circle class="ring" cx="250" cy="250" r="242"/><circle class="sat" cx="250" cy="492" r="2.5" opacity=".7"/><circle class="sat" cx="40.4" cy="129" r="2" opacity=".5"/></g>
+      </svg>
       <figure><img src="https://avatars.githubusercontent.com/u/6930518?v=4&amp;s=600" alt="Dex Xu in the Alps" width="250" height="250" onerror="this.onerror=null;this.src='assets/avatar.jpg'"></figure>
       <div class="motto">Felix, qui potuit rerum cognoscere causas.<small>Virgil · my GitHub bio</small></div>
     </div>
@@ -338,10 +364,10 @@ td .area{font-size:12.5px;color:var(--muted)}
       <h2 id="h-proof">Numbers anyone can check on GitHub.</h2>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">58</div><p>open-source projects with my merged code</p></div>
-      <div class="stat"><div class="n">180<sup>+</sup></div><p>merged pull requests across GitHub</p></div>
-      <div class="stat"><div class="n">7</div><p>leaderboard records in OpenAI Parameter Golf</p></div>
-      <div class="stat"><div class="n">4.1k</div><p>GitHub stars on seedance2-skill, my most-used repo</p></div>
+      <div class="stat"><div class="n"><span data-to="58">58</span></div><p>open-source projects with my merged code</p></div>
+      <div class="stat"><div class="n"><span data-to="180">180</span><sup>+</sup></div><p>merged pull requests across GitHub</p></div>
+      <div class="stat"><div class="n"><span data-to="7">7</span></div><p>leaderboard records in OpenAI Parameter Golf</p></div>
+      <div class="stat"><div class="n"><span data-to="4.1" data-dec="1" data-suf="k">4.1k</span></div><p>GitHub stars on seedance2-skill, my most-used repo</p></div>
     </div>
 
     <div class="merged">
@@ -433,7 +459,7 @@ td .area{font-size:12.5px;color:var(--muted)}
             <g stroke="rgba(242,238,228,.28)" stroke-width="1.2" fill="none">
               <path d="M280 46 L150 120 M280 46 L280 120 M280 46 L410 120 M150 120 L100 196 M150 120 L190 196 M280 120 L250 196 M280 120 L320 196 M410 120 L410 196 M190 196 L190 250 M320 196 L300 250 M320 196 L350 250"/>
             </g>
-            <g stroke="#e6b75e" stroke-width="2.2" fill="none"><path d="M280 46 L280 120 L320 196 L350 250"/></g>
+            <g stroke="#e6b75e" stroke-width="2.2" fill="none"><path class="draw" pathLength="1" d="M280 46 L280 120 L320 196 L350 250"/></g>
             <g font-family="Geist Mono, monospace" font-size="11" fill="rgba(242,238,228,.62)">
               <circle cx="280" cy="46" r="7" fill="#f2eee4"/><text x="294" y="42">draft</text>
               <circle cx="150" cy="120" r="6" fill="rgba(242,238,228,.55)"/><text x="72" y="116">improve</text>
@@ -603,7 +629,7 @@ td .area{font-size:12.5px;color:var(--muted)}
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <h3>Dixing (Dex) Xu · 许迪星</h3>
+        <h3>Dixing (Dex) Xu</h3>
         <p>Engineer at Weco AI, based in London, UK. I build agents that write, test and improve code.</p>
       </div>
       <div>
@@ -630,6 +656,30 @@ td .area{font-size:12.5px;color:var(--muted)}
 </footer>
 
 <script>
+(function(){
+  // Scroll reveal. Only elements that start below the fold are hidden, so the first frame is always complete.
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(still||!('IntersectionObserver' in window)) return;
+  var sel='.sec-head,.stats,.merged,.orgs,.ad,.card,.log li,.tbl-wrap,.plist li,.awards,.invite .wrap>*,.foot-top>div,.path';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  // stagger siblings in grids and lists
+  ['.adopt-grid','.feat','.small','.log','.plist','.foot-top','.invite .wrap'].forEach(function(q){
+    document.querySelectorAll(q).forEach(function(box){[].forEach.call(box.children,function(c,i){c.style.setProperty('--d',(i%6)*0.08+'s')})});
+  });
+  document.querySelectorAll('.cpath li').forEach(function(li,i){li.style.setProperty('--d',(0.2+i*0.18)+'s')});
+  function count(span){
+    var to=parseFloat(span.dataset.to),dec=+(span.dataset.dec||0),suf=span.dataset.suf||'',t0=null,dur=1400;
+    function step(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/dur);k=1-Math.pow(1-k,3);span.textContent=(to*k).toFixed(dec)+suf;if(k<1)requestAnimationFrame(step)}
+    span.textContent=(0).toFixed(dec)+suf; requestAnimationFrame(step);
+  }
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){
+    if(!e.isIntersecting) return; var el=e.target; el.classList.remove('pre'); io.unobserve(el);
+    if(el.classList.contains('stats')) el.querySelectorAll('[data-to]').forEach(count);
+  })},{rootMargin:'0px 0px -12% 0px',threshold:0.12});
+  els.forEach(function(el){
+    if(el.getBoundingClientRect().top>innerHeight*0.92){ if(!el.classList.contains('path')) el.classList.add('rv'); el.classList.add('pre'); io.observe(el); }
+  });
+})();
 (function(){
   // Show an organisation's logo only if its file exists in assets/logos/; otherwise keep the typeset name
   document.querySelectorAll('.orgs img').forEach(function(img){
