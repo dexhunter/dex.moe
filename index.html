@@ -211,7 +211,12 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .small .body{padding:24px}
 .small h3{font-size:22px}
 .big-n{font:600 15px/1 var(--mono);color:var(--link)}
-@media (max-width:900px){.feat,.small{grid-template-columns:1fr}}
+.card.lead{grid-column:1/-1;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-rows:none}
+.card.lead .vis{aspect-ratio:auto;min-height:340px}
+.card.lead .body{padding:clamp(26px,3.6vw,48px);justify-content:center}
+.card.lead h3{font-size:clamp(30px,3.4vw,44px)}
+.card.lead .links{margin-top:0}
+@media (max-width:900px){.feat,.small{grid-template-columns:1fr}.card.lead{grid-template-columns:1fr}.card.lead .vis{aspect-ratio:560/320;min-height:0}}
 .pg{display:grid;gap:14px;width:min(78%,420px)}
 .pg .bar{display:grid;grid-template-columns:110px 1fr 34px;align-items:center;gap:12px;font:400 12.5px/1 var(--mono);color:var(--on-ai-2)}
 .pg .bar i{display:block;height:12px;border-radius:2px;background:var(--on-ai-3)}
@@ -370,7 +375,7 @@ td .area{font-size:12.5px;color:var(--muted)}
     <div class="hero-copy">
       <h1 id="h-hero"><span>Optimizing</span><span>the</span><span>optimizer<span class="dot">.</span></span></h1>
       <p class="sub">I build recursively <span class="nw">self-improving</span> AI agents.</p>
-      <p>I'm Dex, a Member of Technical Staff at <b>Weco AI</b> (London, UK). My agents write code, test it against a benchmark and keep what scores better, then run the same loop on their own harness. I co-authored <b>AIDE</b>, the tree-search ML agent OpenAI used in MLE-bench, and built the research agent that set <b>seven records</b> in OpenAI's Parameter Golf.</p>
+      <p>I'm Dex, a Member of Technical Staff at <b>Weco AI</b> (London, UK). My agents write code, test it against a benchmark and keep what scores better. I co-authored <b>AIDE</b>, the tree-search ML agent OpenAI used in MLE-bench, and <b>AIDE²</b>, which runs that loop on AIDE's own code. I also built the research agent that set <b>seven records</b> in OpenAI's Parameter Golf.</p>
       <div class="cta">
         <a class="pill solid" href="#work">See selected work →</a>
         <a class="pill ghost" href="https://github.com/dexhunter">GitHub profile</a>
@@ -474,6 +479,44 @@ td .area{font-size:12.5px;color:var(--muted)}
     </div>
 
     <div class="feat">
+      <article class="card lead">
+        <div class="vis" aria-hidden="true">
+          <svg viewBox="0 0 560 320" role="img">
+            <g stroke="rgba(242,238,228,.28)" stroke-width="1.2" fill="none">
+              <circle cx="150" cy="160" r="112"/><circle cx="150" cy="160" r="58"/>
+              <path d="M224 76 H292 M206 176 H292 M300 268 H540 M540 263 V273"/>
+            </g>
+            <g stroke="#e6b75e" stroke-width="2.2" fill="none"><path class="draw" pathLength="1" d="M150 48 A112 112 0 0 1 247 216"/><path class="draw" pathLength="1" d="M150 48 V102"/></g>
+            <path class="draw" pathLength="1" d="M150 102 A58 58 0 0 1 200.2 189" stroke="rgba(242,238,228,.7)" stroke-width="1.8" fill="none"/>
+            <g font-family="Geist Mono, monospace" font-size="12" fill="rgba(242,238,228,.62)">
+              <circle cx="150" cy="48" r="8" fill="#e6b75e"/>
+              <circle cx="150" cy="102" r="6.5" fill="#f2eee4"/>
+              <text x="140" y="80" text-anchor="end" fill="#e6b75e">rewrites</text>
+              <rect x="145" y="155" width="10" height="10" rx="2" fill="rgba(242,238,228,.45)"/><text x="150" y="184" text-anchor="middle">task</text>
+              <text x="300" y="80" fill="#f2eee4">outer loop</text>
+              <text x="300" y="99">rewrites the agent's code,</text>
+              <text x="300" y="117">keeps it if it scores higher</text>
+              <text x="300" y="180" fill="#f2eee4">inner loop</text>
+              <text x="300" y="199">optimizes task code</text>
+              <text x="300" y="217">against an eval</text>
+              <text x="300" y="250" font-size="11" fill="rgba(242,238,228,.45)">100 outer-loop steps, 8 days</text>
+              <circle cx="300" cy="268" r="4.5" fill="rgba(242,238,228,.55)"/>
+              <circle cx="414" cy="268" r="5" fill="#f2eee4"/>
+              <circle cx="506" cy="268" r="7" fill="#e6b75e"/>
+              <text x="300" y="293">AIDE<tspan dy="3" font-size="9">0</tspan></text>
+              <text x="414" y="293" text-anchor="middle">AIDE<tspan dy="3" font-size="9">47</tspan></text>
+              <text x="506" y="293" text-anchor="middle" fill="#e6b75e">AIDE<tspan dy="3" font-size="9">85</tspan></text>
+            </g>
+          </svg>
+        </div>
+        <div class="body">
+          <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/132215366?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">Weco AI · co-author · 2026</span>
+          <h3>AIDE²</h3>
+          <p>An outer agent rewrites AIDE's own code and keeps a rewrite only when it scores higher. In 100 unattended steps over eight days it found seven better versions of AIDE, and the best ones beat the hand-tuned agent on MLE-Bench Lite, ALE-Bench Lite and WeatherBench 2.</p>
+          <ul class="facts"><li>first evidence of recursive <span class="nw">self-improvement</span></li><li>KernelBench reward hacking 63% → 34%</li></ul>
+          <div class="links"><a class="arrow" href="https://www.weco.ai/blog/first-evidence-of-recursive-self-improvement">Read the post</a><a class="arrow" href="https://arxiv.org/abs/2609.26457">Technical report</a></div>
+        </div>
+      </article>
       <article class="card">
         <div class="vis" aria-hidden="true">
           <svg viewBox="0 0 560 280" role="img">
