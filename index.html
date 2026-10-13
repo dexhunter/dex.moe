@@ -10,7 +10,7 @@
 <meta property="og:title" content="Dex Hunter">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/6930518?v=4&amp;s=600">
 <title>Dex Hunter</title>
-<meta name="description" content="Dex Hunter builds autonomous agents for ML engineering and research at Weco AI in London, UK. AIDE co-author, open-source contributor to 58 projects.">
+<meta name="description" content="Dex Hunter builds recursively self-improving AI agents for ML engineering and research at Weco AI in London, UK. AIDE co-author, open-source contributor to 58 projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
@@ -93,6 +93,8 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .hero h1 .dot{color:var(--star)}
 .hero p{margin:0;font-size:clamp(16px,1.35vw,18px);line-height:1.7;color:var(--on-ai-2);max-width:56ch}
 .hero p b{color:var(--on-ai);font-weight:600}
+.hero p.sub{margin-top:-6px;font:400 clamp(20px,2vw,26px)/1.35 var(--serif);color:var(--on-ai)}
+.hero p.sub span{white-space:nowrap}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .cta .pill{height:44px;padding:0 20px;font-size:15px}
 .follow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--on-ai-3);letter-spacing:.06em}
@@ -321,7 +323,7 @@ td .area{font-size:12.5px;color:var(--muted)}
 /* Motion */
 @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
 .hero-copy>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
-.hero-copy>*:nth-child(2){animation-delay:.06s}.hero-copy>*:nth-child(3){animation-delay:.12s}.hero-copy>*:nth-child(4){animation-delay:.18s}
+.hero-copy>*:nth-child(2){animation-delay:.06s}.hero-copy>*:nth-child(3){animation-delay:.12s}.hero-copy>*:nth-child(4){animation-delay:.18s}.hero-copy>*:nth-child(5){animation-delay:.24s}
 .rv{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rv.pre{opacity:0;transform:translateY(22px)}
 .cpath::before{transform-origin:left;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
@@ -363,8 +365,9 @@ td .area{font-size:12.5px;color:var(--muted)}
   <canvas id="sky" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="hero-copy">
-      <h1 id="h-hero"><span>Build</span><span>the</span><span>builders<span class="dot">.</span></span></h1>
-      <p>I'm Dex, a Member of Technical Staff at <b>Weco AI</b> (London, UK). I build autonomous agents that do long-horizon engineering and research work. I co-authored <b>AIDE</b>, the tree-search ML agent OpenAI used in MLE-bench, and built the research agent that set <b>seven records</b> in OpenAI's Parameter Golf.</p>
+      <h1 id="h-hero"><span>Optimizing</span><span>the</span><span>optimizer<span class="dot">.</span></span></h1>
+      <p class="sub">I build recursively <span>self-improving</span> AI agents.</p>
+      <p>I'm Dex, a Member of Technical Staff at <b>Weco AI</b> (London, UK). My agents write code, test it against a benchmark and keep what scores better, then run the same loop on their own harness. I co-authored <b>AIDE</b>, the tree-search ML agent OpenAI used in MLE-bench, and built the research agent that set <b>seven records</b> in OpenAI's Parameter Golf.</p>
       <div class="cta">
         <a class="pill solid" href="#work">See selected work →</a>
         <a class="pill ghost" href="https://github.com/dexhunter">GitHub profile</a>
@@ -638,7 +641,7 @@ td .area{font-size:12.5px;color:var(--muted)}
     <div class="foot-top">
       <div>
         <h3>Dex Hunter</h3>
-        <p>Member of Technical Staff at Weco AI, London, UK. I build agents that write, test and improve code.</p>
+        <p>Member of Technical Staff at Weco AI, London, UK. I build recursively self-improving AI agents.</p>
       </div>
       <div>
         <p class="eyebrow">Follow</p>
