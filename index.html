@@ -50,6 +50,7 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--star);outline-offset:3px;border-radius:4px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
 .serif{font-family:var(--serif)}
+.nw{white-space:nowrap}
 .eyebrow{font:500 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .dark .eyebrow{color:var(--on-ai-3)}
 h1,h2,h3{font-family:var(--serif);font-weight:600;text-wrap:balance;margin:0}
@@ -94,7 +95,6 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .hero p{margin:0;font-size:clamp(16px,1.35vw,18px);line-height:1.7;color:var(--on-ai-2);max-width:56ch}
 .hero p b{color:var(--on-ai);font-weight:600}
 .hero p.sub{margin-top:-6px;font:400 clamp(20px,2vw,26px)/1.35 var(--serif);color:var(--on-ai)}
-.hero p.sub span{white-space:nowrap}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .cta .pill{height:44px;padding:0 20px;font-size:15px}
 .follow{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--on-ai-3);letter-spacing:.06em}
@@ -165,7 +165,7 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .chips .more{border-style:dashed;color:var(--muted)}
 .adopt{margin-top:64px;display:grid;gap:22px}
 .adopt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ad{background:var(--ivory);border-radius:14px;padding:22px 22px 20px;display:grid;gap:12px;align-content:start;min-width:0}
+.ad{background:var(--ivory);border-radius:14px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
 .ad .who{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--link)}
 .ad blockquote{margin:0;font:400 17px/1.45 var(--serif);color:var(--ink)}
 .ad .src{display:flex;flex-wrap:wrap;gap:6px 16px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
@@ -199,13 +199,13 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-width:0}
 .card .vis{background:var(--ai);color:var(--on-ai);position:relative;aspect-ratio:16/8;max-width:100%;display:grid;place-items:center;overflow:hidden}
 .card .vis svg{width:100%;height:100%}
-.card .body{padding:26px 28px 28px;display:grid;gap:12px;align-content:start}
+.card .body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:12px}
 .card .meta{font:500 12px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .card h3{font-size:clamp(24px,2.4vw,30px);line-height:1.15}
 .card p{margin:0;color:var(--ink-2);line-height:1.6}
 .facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin:4px 0 2px;padding:0;list-style:none;font:400 13px/1.4 var(--mono);color:var(--ink-2)}
 .facts li::before{content:"✦ ";color:var(--star)}
-.links{display:flex;flex-wrap:wrap;gap:20px;margin-top:6px}
+.links{display:flex;flex-wrap:wrap;gap:20px;margin-top:auto;padding-top:6px}
 .small{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .small .card{grid-template-rows:1fr}
 .small .body{padding:24px}
@@ -248,9 +248,12 @@ td .area{font-size:12.5px;color:var(--muted)}
 .repo .av{width:36px;height:36px;border-radius:9px}
 .repo span{min-width:0}
 .repo b{display:block;font:600 15px/1.25 var(--sans);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.repo small{display:block;font:400 12px/1.4 var(--mono);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.repo small{display:flex;gap:6px;font:400 12px/1.4 var(--mono);color:var(--muted)}
+.repo small span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.repo small span+span{flex:none}
+.repo small span+span::before{content:"· "}
 @media (max-width:980px){.repos{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:640px){.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.repo{padding:12px;gap:10px}.repo .av{width:30px;height:30px}}
+@media (max-width:640px){.repos{grid-template-columns:repeat(2,minmax(0,1fr))}.repo{padding:12px;gap:10px}.repo .av{width:30px;height:30px}.repo small{flex-direction:column;gap:0}.repo small span+span::before{content:none}}
 .col-title.hl-title{margin-top:56px}
 .hl-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;margin-bottom:6px}
 .hl-head h3{margin:0}
@@ -366,7 +369,7 @@ td .area{font-size:12.5px;color:var(--muted)}
   <div class="wrap">
     <div class="hero-copy">
       <h1 id="h-hero"><span>Optimizing</span><span>the</span><span>optimizer<span class="dot">.</span></span></h1>
-      <p class="sub">I build recursively <span>self-improving</span> AI agents.</p>
+      <p class="sub">I build recursively <span class="nw">self-improving</span> AI agents.</p>
       <p>I'm Dex, a Member of Technical Staff at <b>Weco AI</b> (London, UK). My agents write code, test it against a benchmark and keep what scores better, then run the same loop on their own harness. I co-authored <b>AIDE</b>, the tree-search ML agent OpenAI used in MLE-bench, and built the research agent that set <b>seven records</b> in OpenAI's Parameter Golf.</p>
       <div class="cta">
         <a class="pill solid" href="#work">See selected work →</a>
@@ -430,7 +433,7 @@ td .area{font-size:12.5px;color:var(--muted)}
       <div class="adopt-grid">
         <article class="ad">
           <div class="org"><img class="av lg" src="https://avatars.githubusercontent.com/u/14957082?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">OpenAI</span></div>
-          <blockquote>Used AIDE for MLE-bench in the GPT-4.5 system card, and featured my agent's PR in the Parameter Golf write-up.</blockquote>
+          <blockquote>Used AIDE for MLE-bench in the <span class="nw">GPT-4.5</span> system card, and featured my agent's PR in the Parameter Golf <span class="nw">write-up</span>.</blockquote>
           <div class="src"><a href="https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf">System card ↗</a><a href="https://openai.com/index/what-parameter-golf-taught-us/">Write-up ↗</a><a href="https://github.com/openai/parameter-golf/pull/1060">PR #1060 ↗</a></div>
         </article>
         <article class="ad">
@@ -555,22 +558,22 @@ td .area{font-size:12.5px;color:var(--muted)}
       <p class="lede">Speed and correctness fixes to other people's projects. Many recent ones were written by the agents I build at Weco AI, and each went through the maintainers' normal review.</p>
     </div>
     <div class="repos">
-      <a class="repo" href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/252820863?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>openclaw</b><small>openclaw · ★ 391k</small></span></a>
-      <a class="repo" href="https://github.com/Significant-Gravitas/AutoGPT/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/130738209?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>AutoGPT</b><small>Significant-Gravitas · ★ 188k</small></span></a>
-      <a class="repo" href="https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/126733545?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>langchain</b><small>langchain-ai · ★ 147k</small></span></a>
-      <a class="repo" href="https://github.com/openbq-org/OpenBB/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/328144346?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>OpenBB</b><small>openbq-org · ★ 74k</small></span></a>
-      <a class="repo" href="https://github.com/remotion-dev/remotion/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/85344006?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>remotion</b><small>remotion-dev · ★ 62k</small></span></a>
-      <a class="repo" href="https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/271095942?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>goose</b><small>aaif-goose · ★ 55k</small></span></a>
-      <a class="repo" href="https://github.com/agno-agi/agno/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/104874993?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>agno</b><small>agno-agi · ★ 43k</small></span></a>
-      <a class="repo" href="https://github.com/ManimCommunity/manim/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/65579849?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>manim</b><small>ManimCommunity · ★ 41k</small></span></a>
-      <a class="repo" href="https://github.com/pnpm/pnpm/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/21320719?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pnpm</b><small>pnpm · ★ 37k</small></span></a>
-      <a class="repo" href="https://github.com/python-poetry/poetry/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/48722593?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>poetry</b><small>python-poetry · ★ 34k</small></span></a>
-      <a class="repo" href="https://github.com/invoke-ai/InvokeAI/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/113954515?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>InvokeAI</b><small>invoke-ai · ★ 28k</small></span></a>
-      <a class="repo" href="https://github.com/QwenLM/qwen-code/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/141221163?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>qwen-code</b><small>QwenLM · ★ 28k</small></span></a>
-      <a class="repo" href="https://github.com/mozilla-ai/llamafile/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/129804596?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>llamafile</b><small>mozilla-ai · ★ 26k</small></span></a>
-      <a class="repo" href="https://github.com/oxc-project/oxc/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/149946238?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>oxc</b><small>oxc-project · ★ 23k</small></span></a>
-      <a class="repo" href="https://github.com/pydantic/pydantic-ai/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/110818415?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pydantic-ai</b><small>pydantic · ★ 20k</small></span></a>
-      <a class="repo" href="https://github.com/lllyasviel/style2paints/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/19834515?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>style2paints</b><small>lllyasviel · ★ 18k</small></span></a>
+      <a class="repo" href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/252820863?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>openclaw</b><small><span>openclaw</span><span>★ 391k</span></small></span></a>
+      <a class="repo" href="https://github.com/Significant-Gravitas/AutoGPT/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/130738209?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>AutoGPT</b><small><span>Significant-Gravitas</span><span>★ 188k</span></small></span></a>
+      <a class="repo" href="https://github.com/langchain-ai/langchain/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/126733545?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>langchain</b><small><span>langchain-ai</span><span>★ 147k</span></small></span></a>
+      <a class="repo" href="https://github.com/openbq-org/OpenBB/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/328144346?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>OpenBB</b><small><span>openbq-org</span><span>★ 74k</span></small></span></a>
+      <a class="repo" href="https://github.com/remotion-dev/remotion/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/85344006?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>remotion</b><small><span>remotion-dev</span><span>★ 62k</span></small></span></a>
+      <a class="repo" href="https://github.com/aaif-goose/goose/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/271095942?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>goose</b><small><span>aaif-goose</span><span>★ 55k</span></small></span></a>
+      <a class="repo" href="https://github.com/agno-agi/agno/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/104874993?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>agno</b><small><span>agno-agi</span><span>★ 43k</span></small></span></a>
+      <a class="repo" href="https://github.com/ManimCommunity/manim/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/65579849?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>manim</b><small><span>ManimCommunity</span><span>★ 41k</span></small></span></a>
+      <a class="repo" href="https://github.com/pnpm/pnpm/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/21320719?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pnpm</b><small><span>pnpm</span><span>★ 37k</span></small></span></a>
+      <a class="repo" href="https://github.com/python-poetry/poetry/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/48722593?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>poetry</b><small><span>python-poetry</span><span>★ 34k</span></small></span></a>
+      <a class="repo" href="https://github.com/invoke-ai/InvokeAI/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/113954515?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>InvokeAI</b><small><span>invoke-ai</span><span>★ 28k</span></small></span></a>
+      <a class="repo" href="https://github.com/QwenLM/qwen-code/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/141221163?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>qwen-code</b><small><span>QwenLM</span><span>★ 28k</span></small></span></a>
+      <a class="repo" href="https://github.com/mozilla-ai/llamafile/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/129804596?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>llamafile</b><small><span>mozilla-ai</span><span>★ 26k</span></small></span></a>
+      <a class="repo" href="https://github.com/oxc-project/oxc/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/149946238?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>oxc</b><small><span>oxc-project</span><span>★ 23k</span></small></span></a>
+      <a class="repo" href="https://github.com/pydantic/pydantic-ai/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/110818415?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>pydantic-ai</b><small><span>pydantic</span><span>★ 20k</span></small></span></a>
+      <a class="repo" href="https://github.com/lllyasviel/style2paints/pulls?q=is%3Apr+author%3Adexhunter+is%3Amerged"><img class="av" src="https://avatars.githubusercontent.com/u/19834515?s=96&amp;v=4" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span><b>style2paints</b><small><span>lllyasviel</span><span>★ 18k</span></small></span></a>
     </div>
     <p class="tbl-note">16 of 58 projects shown, by stars. Full list on my <a href="https://github.com/dexhunter">GitHub profile</a>.</p>
     <p class="col-title hl-title">Highlights</p>
