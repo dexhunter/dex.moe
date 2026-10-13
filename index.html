@@ -115,14 +115,11 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:.005em}
 @keyframes pulse{50%{transform:scale(1.9);opacity:0}}
 .portrait figure{position:relative;margin:0;width:clamp(180px,20vw,250px);aspect-ratio:1;max-width:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 8px var(--ai),0 0 0 9px var(--ai-line),0 30px 60px rgba(0,0,0,.35)}
 .portrait figure img{width:100%;height:100%;object-fit:cover}
-.portrait .motto{position:absolute;right:0;bottom:6px;white-space:nowrap;text-align:right;font:italic 400 14px/1.45 var(--serif);color:var(--on-ai-3)}
-.portrait .motto small{display:block;font:400 11px/1.4 var(--sans);font-style:normal;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr}
   .portrait{min-height:300px;order:-1}
   .portrait figure{width:min(40vw,168px)}
   .orbits{width:min(96vw,330px)}
-  .portrait .motto{display:none}
 }
 
 /* Path */
@@ -397,7 +394,6 @@ td .area{font-size:12.5px;color:var(--muted)}
         <g style="--t:160s"><circle class="ring" cx="250" cy="250" r="242"/><circle class="sat" cx="250" cy="492" r="2.5" opacity=".7"/><circle class="sat" cx="40.4" cy="129" r="2" opacity=".5"/></g>
       </svg>
       <figure><img src="https://avatars.githubusercontent.com/u/6930518?v=4&amp;s=600" alt="Portrait of Dex Hunter" width="250" height="250" onerror="this.onerror=null;this.src='assets/avatar.jpg'"></figure>
-      <div class="motto">Felix, qui potuit rerum cognoscere causas.<small>Virgil · my GitHub bio</small></div>
     </div>
   </div>
 </section>
@@ -411,7 +407,7 @@ td .area{font-size:12.5px;color:var(--muted)}
       <li><span class="logos" aria-hidden="true"><img class="av" src="https://www.google.com/s2/favicons?domain=www.ntu.edu.sg&amp;sz=64" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"><img class="av" src="https://www.google.com/s2/favicons?domain=www.zju.edu.cn&amp;sz=64" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"></span><span class="yr">2019-20</span><b>NTU · Zhejiang U.</b><span>Private ML at the IoT edge</span></li>
       <li><span class="logos" aria-hidden="true"><img class="av" src="https://www.google.com/s2/favicons?domain=www.hkbu.edu.hk&amp;sz=64" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"></span><span class="yr">2020-21</span><b>HKBU</b><span>All-reduce for distributed training</span></li>
       <li><span class="logos" aria-hidden="true"><img class="av" src="https://github.com/hextrust.png?size=96" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"></span><span class="yr">2022-24</span><b>Hex Trust</b><span>Trading backend in Rust and Go</span></li>
-      <li class="now"><span class="logos" aria-hidden="true"><img class="av" src="https://avatars.githubusercontent.com/u/132215366?s=96&amp;v=4" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"></span><span class="yr">2024-now</span><b>Weco AI</b><span>Self-improving research agents</span></li>
+      <li class="now"><span class="logos" aria-hidden="true"><img class="av" src="https://avatars.githubusercontent.com/u/132215366?s=96&amp;v=4" alt="" width="24" height="24" loading="lazy" decoding="async" onerror="this.remove()"></span><span class="yr">2024-now</span><b>Weco AI</b><span>AI research consultant, then Member of Technical Staff</span></li>
     </ol>
     <dl class="stack">
       <div><dt>Languages</dt><dd class="tools"><span>Python</span><span>Rust</span><span>Go</span><span>TypeScript</span><span>C</span></dd></div>
@@ -464,8 +460,8 @@ td .area{font-size:12.5px;color:var(--muted)}
         </article>
         <article class="ad">
           <div class="org"><img class="av lg" src="https://www.google.com/s2/favicons?domain=www.aisi.gov.uk&amp;sz=64" alt="" width="36" height="36" loading="lazy" decoding="async" onerror="this.remove()"><span class="who">UK AI Security Institute</span></div>
-          <blockquote>Merged my speedups into Inspect, its LLM eval framework.</blockquote>
-          <div class="src"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">inspect_ai #4714 ↗</a></div>
+          <blockquote>Merged my speedups into Inspect, its LLM eval framework, in 2026: faster clustered-stderr scoring and linear-time media extraction.</blockquote>
+          <div class="src"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">inspect_ai #4714 ↗</a><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4628">inspect_ai #4628 ↗</a></div>
         </article>
       </div>
     </div>
@@ -544,7 +540,7 @@ td .area{font-size:12.5px;color:var(--muted)}
         <div class="body">
           <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/132215366?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">Weco AI · co-author, co-maintainer</span>
           <h3>AIDE</h3>
-          <p>Tree search over code: draft, run, debug, improve, keep the best. I co-authored the paper and co-maintain the repo.</p>
+          <p>Tree search over code: draft, run, debug, improve, keep the best.</p>
           <ul class="facts"><li>1.6k stars</li><li>top scaffold in OpenAI's MLE-bench paper</li></ul>
           <div class="links"><a class="arrow" href="https://arxiv.org/abs/2502.13138">Read the paper</a><a class="arrow" href="https://github.com/WecoAI/aideml">Code</a></div>
         </div>
@@ -561,8 +557,8 @@ td .area{font-size:12.5px;color:var(--muted)}
         <div class="body">
           <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/14957082?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">OpenAI challenge · 2026</span>
           <h3>Seven records in Parameter Golf</h3>
-          <p>Best language model in 16 MB and 10 minutes of training. My research agent ran for 22 days, filed its own PRs and set twice as many records as the best human, out of 1,016 entrants.</p>
-          <ul class="facts"><li>25 PRs, 7 records</li><li>cited 435 times by other entrants</li></ul>
+          <p>Best language model in 16 MB and 10 minutes of training. My research agent ran for 22 days, filed 25 PRs of its own and set twice as many records as the best human, out of 1,016 entrants.</p>
+          <ul class="facts"><li>cited 435 times by other entrants</li></ul>
           <div class="links"><a class="arrow" href="https://github.com/openai/parameter-golf/tree/main/records/track_10min_16mb">Record track</a><a class="arrow" href="https://github.com/openai/parameter-golf/pull/1769">Best entry</a></div>
         </div>
       </article>
@@ -586,7 +582,7 @@ td .area{font-size:12.5px;color:var(--muted)}
       <article class="card"><div class="body">
         <span class="meta"><img class="av" src="https://avatars.githubusercontent.com/u/7657900?s=96&amp;v=4" alt="" width="20" height="20" loading="lazy" decoding="async" onerror="this.remove()">Linux Foundation · 2018-24</span>
         <h3>Fabric Python SDK</h3>
-        <p>Maintainer of Hyperledger's Python SDK. Ran the v0.7 release and mentored two internships.</p>
+        <p>Maintainer of Hyperledger's <a href="https://github.com/hyperledger/fabric-sdk-py">Python SDK</a>. Ran the v0.7 release, mentored two internships and interned on <a href="https://github.com/hyperledger-cello/cello">Cello</a>.</p>
         <span class="big-n">Maintainer · release manager</span>
         <div class="links"><a class="arrow" href="https://github.com/hyperledger/fabric-sdk-py/blob/main/MAINTAINERS.md">Maintainers file</a></div>
       </div></article>
@@ -622,10 +618,8 @@ td .area{font-size:12.5px;color:var(--muted)}
     <p class="tbl-note">16 of 59 projects shown, by stars. Full list on my <a href="https://github.com/dexhunter">GitHub profile</a>.</p>
     <p class="col-title hl-title">Highlights</p>
     <ol class="log">
-      <li><time>2026</time><div><div class="hl-head"><h3>UK AI Security Institute · Inspect</h3><div class="stack-av"><a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714" title="Inspect"><img class="av" src="https://www.google.com/s2/favicons?domain=www.aisi.gov.uk&amp;sz=64" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Faster clustered-stderr scoring (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4714">#4714</a>) and linear-time media extraction (<a href="https://github.com/UKGovernmentBEIS/inspect_ai/pull/4628">#4628</a>).</p></div></li>
       <li><time>2026</time><div><div class="hl-head"><h3>Seven agent runtimes</h3><div class="stack-av"><a href="https://github.com/openclaw/openclaw/pull/99714" title="openclaw"><img class="av" src="https://avatars.githubusercontent.com/u/252820863?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/Significant-Gravitas/AutoGPT/pull/13478" title="AutoGPT"><img class="av" src="https://avatars.githubusercontent.com/u/130738209?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/aaif-goose/goose/pull/10409" title="goose"><img class="av" src="https://avatars.githubusercontent.com/u/271095942?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/QwenLM/qwen-code/pull/8253" title="Qwen Code"><img class="av" src="https://avatars.githubusercontent.com/u/141221163?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/pydantic/pydantic-ai/pull/6485" title="Pydantic AI"><img class="av" src="https://avatars.githubusercontent.com/u/110818415?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/agno-agi/agno/pull/8907" title="agno"><img class="av" src="https://avatars.githubusercontent.com/u/104874993?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/BoundaryML/baml/pull/3975" title="BAML"><img class="av" src="https://avatars.githubusercontent.com/u/124114301?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Performance fixes in openclaw, AutoGPT, goose, Qwen Code, Pydantic AI, agno and BAML.</p></div></li>
       <li><time>2026</time><div><div class="hl-head"><h3>Evolutionary search</h3><div class="stack-av"><a href="https://github.com/SakanaAI/ShinkaEvolve/pull/175" title="ShinkaEvolve"><img class="av" src="https://avatars.githubusercontent.com/u/140988036?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/algorithmicsuperintelligence/openevolve/pull/469" title="OpenEvolve"><img class="av" src="https://avatars.githubusercontent.com/u/238764598?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Cut redundant AST parsing in Sakana's ShinkaEvolve and bounded shutdown latency in OpenEvolve.</p></div></li>
-      <li><time>2018-24</time><div><div class="hl-head"><h3>Hyperledger</h3><div class="stack-av"><a href="https://github.com/hyperledger/fabric-sdk-py" title="Fabric Python SDK"><img class="av" src="https://avatars.githubusercontent.com/u/7657900?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a><a href="https://github.com/hyperledger-cello/cello" title="Cello"><img class="av" src="https://avatars.githubusercontent.com/u/185365251?s=96&amp;v=4" alt="" width="30" height="30" loading="lazy" decoding="async" onerror="this.remove()"></a></div></div><p>Maintained the Fabric Python SDK and interned on Cello for the Linux Foundation.</p></div></li>
     </ol>
   </div>
 </section>
@@ -689,7 +683,7 @@ td .area{font-size:12.5px;color:var(--muted)}
     <div class="foot-top">
       <div>
         <h3>Dex Hunter</h3>
-        <p>Member of Technical Staff at Weco AI, London, UK. I build recursively self-improving AI agents.</p>
+        <p>Member of Technical Staff at Weco AI. I build recursively self-improving AI agents.</p>
       </div>
       <div>
         <p class="eyebrow">Follow</p>
